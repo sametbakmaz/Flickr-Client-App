@@ -8,22 +8,28 @@
 import UIKit
 
 class PhotoDetailViewController: UIViewController {
-
+    
+    var photo: Photo?
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var ownerImageView: UIImageView!
+    @IBOutlet weak var ownerNameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    let networkManager = NetworkManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        ownerNameLabel.text = photo?.ownername
+        
+        NetworkManager.shared.fetchImage(with: photo?.buddyIconURL) { data in
+            self.ownerImageView.image = UIImage(data: data)
+        }
+        NetworkManager.shared.fetchImage(with: photo?.urlZ) { data in
+            self.imageView.image = UIImage(data: data)
+        }
+        title = photo?.title
+        descriptionLabel.text = photo?.photoDescription?.content
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

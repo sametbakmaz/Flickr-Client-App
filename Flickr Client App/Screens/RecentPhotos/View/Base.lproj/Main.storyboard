@@ -85,6 +85,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recent Photos" id="U7e-0g-dZr"/>
+                    <connections>
+                        <segue destination="TAG-hk-sJA" kind="show" identifier="detailSegue" id="CzZ-XS-Oe1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Dq-IU-tth" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,6 +108,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTe-jW-uTd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-339" y="-62"/>
+        </scene>
+        <!--PhotoDetail-->
+        <scene sceneID="JH5-TL-yAb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PhotoDetail" id="TAG-hk-sJA" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xfr-RQ-sua"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a4W-cb-Qdt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1239" y="-63"/>
         </scene>
     </scenes>
     <resources>
