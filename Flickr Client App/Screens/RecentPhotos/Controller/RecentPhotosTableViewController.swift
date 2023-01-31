@@ -16,9 +16,7 @@ class RecentPhotosTableViewController: UITableViewController, UISearchResultsUpd
         super.viewDidLoad()
         setupSearchController()
         fetchRecentPhotos()
-        
-        
-        
+
     }
     
     private func setupSearchController() {
@@ -92,8 +90,8 @@ class RecentPhotosTableViewController: UITableViewController, UISearchResultsUpd
         }
         
         NetworkManager.shared.fetchImage(with: photo?.urlN) { data in
-                cell.photoImageView.image = UIImage(data: data)
-            }
+            cell.photoImageView.image = UIImage(data: data)
+        }
         return cell
     }
     
@@ -118,7 +116,4 @@ class RecentPhotosTableViewController: UITableViewController, UISearchResultsUpd
             searchPhotos(with: text)
         }
     }
-    
-    
-    
 }
